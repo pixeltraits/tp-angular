@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Form } from '../models/form';
+import { FormService } from '../services/form.service';
 
 @Injectable()
-export class IndicateurAmbitionProjetResolver {
+export class FormResolver {
 
   constructor(private formService: FormService) {
   }

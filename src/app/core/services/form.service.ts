@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { API_URL } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
-import { Form } from '@models/form';
+import { Form } from '../models/form';
 
 @Injectable()
 export class FormService {
@@ -12,8 +12,13 @@ export class FormService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Form> {
-    const url = `${API_URL}/form`;
+  getForm(): Observable<Form> {
+    const url = `${environment.API_URL}/form`;
     return this.http.get<Form>(url);
+  }
+
+  addForm(form: Form): Observable<any> {
+    const url = `${environment.API_URL}/form`;
+    return this.http.post(url, form);
   }
 }
