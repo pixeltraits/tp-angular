@@ -8,17 +8,12 @@ import { Form } from './core/models/form';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'app';
-  form : Form;
 
-  constructor (private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
   }
 
-  async ngOnInit() {
-    this.form = this.route.snapshot.data.form;
-  }
-
-  submitLoginForm() {
-    console.log(this.form);
+  ngOnInit(): void {
   }
 }
